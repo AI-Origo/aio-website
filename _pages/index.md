@@ -5,18 +5,19 @@ permalink: /
 ---
 
 <div class="intro">
-  <p>We explore the Future of Work through collaborative Artificial Intelligence simulations. We solve complex problems such as the automation of scientific research, legacy systems migrations and consolidation of data silos and interfaces through agentic AI.</p>
+  <p>We explore the Future of Work through collaborative Artificial Intelligence simulations. We solve complex problems such as the automation of scientific research processes, legacy systems migrations and consolidation of data silos and interfaces using agentic AI.</p>
 </div>
 
 ## Latest News
 
 <div class="news-grid">
-  {% for article in site.data.news limit:6 %}
+  {% assign sorted_news = site.news | sort: 'date' | reverse %}
+  {% for article in sorted_news limit:6 %}
     <div class="news-item">
-      <h3><a href="{{ '/news/' | append: article.slug | relative_url }}">{{ article.title }}</a></h3>
+      <h3><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h3>
       <div class="news-meta">{{ article.date | date: "%B %-d, %Y" }}</div>
       <p class="news-lead">{{ article.lead }}</p>
-      <a href="{{ '/news/' | append: article.slug | relative_url }}" class="read-more">Read more</a>
+      <a href="{{ article.url | relative_url }}" class="read-more">Read more</a>
     </div>
   {% endfor %}
 </div>

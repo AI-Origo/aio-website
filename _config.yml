@@ -19,17 +19,21 @@ collections:
   pages:
     output: true
     permalink: /:title/
+  news:
+    output: true
+    permalink: /news/:title/
 
 # Default front matter
 defaults:
+  -
+    scope:
+      path: ""
+      type: "news"
+    values:
+      layout: "news"
   -
     scope:
       path: "_pages"
       type: "pages"
     values:
       layout: "page"
-  -
-    scope:
-      path: "news"
-    values:
-      layout: "news"
