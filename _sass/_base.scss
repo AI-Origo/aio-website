@@ -15,11 +15,12 @@ a {
     text-decoration: none;
 
     &:hover {
-        color: #2D3748;
+        color: #2D3748 !important;
+        text-decoration: underline !important;
     }
 }
 
-/* _sass/_layout.scss */
+// _sass/_layout.scss
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
@@ -49,6 +50,7 @@ a {
         &.active {
             color: #2D3748;
             font-weight: 500;
+            text-decoration: underline;
         }
     }
 }
@@ -61,4 +63,98 @@ a {
     padding: 2rem 0;
     border-top: 1px solid #eee;
     text-align: center;
+
+    img {
+        width: 16px;
+    }
+}
+
+article {
+    font-family: 'Syne', sans-serif;
+}
+
+main.page-content {
+    width: 1200px;
+    margin: 0 auto;
+
+    p,
+    ul,
+    ol,
+    blockquote {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    ul,
+    ol {
+        padding-left: 3rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+article {
+    .page-content {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+div.intro {
+
+    // first p;
+    p {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        font-style: italic;
+        font-size: 1.5rem;
+    }
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.leadership-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    h3 {
+        margin: 0 0 0.5rem;
+
+        a {
+            color: #2D3748;
+            text-decoration: none;
+
+            &:hover {
+                color: #4A5568;
+            }
+        }
+    }
+}
+
+h3 > a > img {
+    margin-top: 4px;
+    height: 20px;
+    float: right;
 }

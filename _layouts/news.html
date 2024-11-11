@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="news-article">
+  <header class="article-header">
+    <h1 class="article-title">{{ page.title }}</h1>
+    <div class="article-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+    </div>
+  </header>
+
+  <div class="article-lead">
+    {{ page.lead }}
+  </div>
+
+  <div class="article-content">
+    {{ content | markdownify }}
+  </div>
+</article>

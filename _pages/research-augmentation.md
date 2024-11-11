@@ -14,3 +14,5 @@ Our Research Augmentation platform leverages agentic collaboration to revolution
 
 ## How It Works
 Our AI agents work together to gather, analyze, and synthesize information, producing actionable insights in a fraction of the traditional time. This collaborative approach ensures thorough, multi-perspective analysis while maintaining human oversight for strategic decision-making.
+
+Please [contact us](/contact/) to learn more about how we can help you transform your business intelligence.

@@ -13,8 +13,10 @@ We specialize in transforming outdated systems into modern, maintainable solutio
 - Knowledge base creation and maintenance
 
 ## Our Process
-1. Initial system assessment and documentation
-2. Creation of searchable knowledge bases
-3. Development of AI-guided tutorials
-4. Implementation of modern development practices
-5. Continuous system improvement and maintenance
+- Initial system assessment and documentation
+- Creation of searchable knowledge bases
+- Development of AI-guided tutorials
+- Implementation of modern development practices
+- Continuous system improvement and maintenance
+
+Please [contact us](/contact/) to learn more about how we can help you modernize your systems.
