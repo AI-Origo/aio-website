@@ -41,6 +41,7 @@ a {
 .site-title {
     font-size: 1.5rem;
     font-weight: bold;
+    font-family: 'Syne', sans-serif;
 }
 
 .site-nav {
@@ -70,7 +71,11 @@ a {
 }
 
 article {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Exo 2', sans-serif;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Syne', sans-serif;
+    }
 }
 
 main.page-content {
