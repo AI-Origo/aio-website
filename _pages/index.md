@@ -27,13 +27,13 @@ permalink: /
 <div class="leadership-grid">
   <div class="leadership-item">
     <h3>Ferenc Hődör <a href="https://linkedin.com/in/ferenc-hodor/"><img src="{{ '/assets/images/in.png' | relative_url }}" alt="Ferenc Hődör @ LinkedIn"></a></h3>
-    <p>Chief Executive Officer, Operations</p>
+    <p>CEO, Operations</p>
     <p>Leading our operational excellence with decades of experience in software development studios, focusing on AI and XR research in global collaboration.</p>
   </div>
 
   <div class="leadership-item">
     <h3>Ferenc Gundel <a href="https://linkedin.com/in/ferenc-gundel-128a6a102/"><img src="{{ '/assets/images/in.png' | relative_url }}" alt="Ferenc Gundel @ LinkedIn"></a></h3>
-    <p>Chief Executive Officer, Business Development</p>
+    <p>CEO, Business Development</p>
     <p>Driving business strategy with extensive experience in IT and Finance, specializing in large-scale project execution and strategic planning.</p>
   </div>
 
