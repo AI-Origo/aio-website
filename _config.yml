@@ -1,0 +1,30 @@
+# _config.yml
+title: AIO
+email: info@aiorigo.com
+description: >-
+  AI Origo specializes in AI collaboration, system modernization, and innovative gaming solutions.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://aiorigo.com"
+twitter_username: # to be added
+github_username:  # to be added
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:title/
+
+# Default front matter
+defaults:
+  -
+    scope:
+      path: "_pages"
+      type: "pages"
+    values:
+      layout: "page"
