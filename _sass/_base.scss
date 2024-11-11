@@ -135,7 +135,7 @@ div.intro {
 }
 
 .leadership-item {
-    background: #f8f9fa;
+    background: linear-gradient(to bottom, #f0f1fa, #ffffff);
     padding: 1.5rem;
     border-radius: 4px;
     transition: transform 0.2s ease;
@@ -162,4 +162,13 @@ h3 > a > img {
     margin-top: 4px;
     height: 20px;
     float: right;
+}
+
+.privacy-link {
+    color: #4A5568;
+    text-decoration: none;
+}
+
+footer.site-footer span {
+    color: #ddd;
 }

@@ -6,7 +6,7 @@
 }
 
 .news-item {
-  background: #f8f9fa;
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
   padding: 1.5rem;
   border-radius: 4px;
   transition: transform 0.2s ease;
@@ -158,4 +158,12 @@
 .page-title {
   font-size: 2.5rem;
   color: #2D3748;
+}
+
+main.page-content {
+  font-family: 'Exo 2', sans-serif;
+
+  h1, h2, h3, h4, h5, h6 {
+      font-family: 'Syne', sans-serif;
+  }
 }

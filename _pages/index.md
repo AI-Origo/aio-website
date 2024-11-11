@@ -5,7 +5,7 @@ permalink: /
 ---
 
 <div class="intro">
-  <p>We explore the Future of Work through collaborative Artificial Intelligence simulations. We solve complex problems such as the automation of scientific research processes, legacy systems migrations and consolidation of data silos and interfaces using agentic AI.</p>
+  <p>Our goal is to explore the Future of Work through collaborative Artificial Intelligence simulations, to democratize access to digital skills training and to solve complex problems using agentic AI, including the automation of scientific research processes, legacy systems migrations and consolidation of data silos and interfaces. We offer AI strategy consultation and implementation services to our clients. We've worked with banks, AAA game studios, and international research institutes. Let's talk!</p>
 </div>
 
 ## Latest News
