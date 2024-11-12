@@ -5,7 +5,7 @@ permalink: /
 ---
 
 <div class="intro">
-  <p>Our goal is to <strong>explore the Future of Work</strong> through collaborative Artificial Intelligence simulations, to <strong>democratize access to digital skills training</strong> and to <strong>solve complex problems using agentic AI</strong>, including the automation of scientific research processes, legacy systems migrations and consolidation of data silos and interfaces.<br><br>We offer <strong>AI strategy consultation and implementation services</strong> to our clients. We've worked with individuals and startups to banks, AAA game studios, and international research institutes. Let's talk!</p>
+  <p>Our goal is to <strong>explore the Future of Work</strong> through collaborative Artificial Intelligence simulations, to <strong>democratize access to digital skills training</strong> and to <strong>solve complex problems using agentic AI</strong>, including the automation of scientific research processes, legacy systems migrations and consolidation of data silos and interfaces.<br><br>We offer <strong>AI strategy consultation and implementation services</strong> to our clients. We've worked with individuals and startups to banks, AAA game studios, and international research institutes. <a href="{{ '/contact' | relative_url }}">Let's talk!</a></p>
 </div>
 
 ## Latest News
