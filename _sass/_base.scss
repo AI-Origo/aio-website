@@ -178,3 +178,16 @@ h3 > a > img {
 footer.site-footer span {
     color: #ddd;
 }
+
+article > div.page-content > p > img {
+    width: 540px !important;
+    height: 341px !important;
+    // make this look like a polaroid photo
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    background-color: #fff;
+}
