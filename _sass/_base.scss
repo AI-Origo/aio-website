@@ -216,11 +216,13 @@ a {
   img {
     height: 1.5rem;
     opacity: 0.9;
-    transition: opacity 0.2s ease;
+    transition: all 0.3s ease;
+    filter: brightness(0) invert(1);
   }
   
   &:hover img {
     opacity: 1;
+    filter: brightness(0) invert(1);
   }
 }
 
