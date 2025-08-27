@@ -2,6 +2,13 @@
 <html lang="en">
   {% include head.html %}
   <body>
+    {% if page.url == '/' %}
+    <div class="background-video-container">
+      <video autoplay loop muted playsinline class="background-video">
+        <source src="{{ '/assets/videos/bg.mp4' | relative_url }}" type="video/mp4">
+      </video>
+    </div>
+    {% endif %}
     {% include header.html %}
     <main class="page-content">
       {{ content }}
