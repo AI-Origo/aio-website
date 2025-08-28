@@ -86,7 +86,7 @@ permalink: /
   <div class="partners-intro">
     <p>We collaborate with leading organizations to drive innovation and expand our impact across global markets. These strategic partnerships enable us to combine expertise, accelerate research, and deliver comprehensive solutions to our clients.</p>
   </div>
-  
+
   <div class="partners-grid">
     <div class="partner-card">
       <div class="partner-logo">
@@ -100,7 +100,7 @@ permalink: /
         <p>A key strategic partner, ZEL Group specializes in leadership transformation and sustainable business practices. Their innovative approach to Zero Emission Leadership aligns perfectly with our commitment to creating future-ready solutions. Through our strategic collaboration, we're pioneering new methodologies that combine AI innovation with sustainable leadership principles.</p>
       </div>
     </div>
-    
+
     <div class="partner-card">
       <div class="partner-logo">
         <a href="https://brain.performance.one/" target="_blank" rel="noopener noreferrer">
@@ -110,10 +110,10 @@ permalink: /
       <div class="partner-content">
         <h3><a href="https://brain.performance.one/" target="_blank" rel="noopener noreferrer">Performance One Brain</a></h3>
         <p class="partner-tagline">Smart Data Solutions</p>
-        <p>Since summer 2025, we've partnered with Performance One Brain, Germany's leading specialist for Smart Data and Big Data solutions. Together, we conduct cutting-edge research and development in AI and data science. Their expertise in machine learning, data mining, and statistical learning theory, combined with our AI innovation capabilities, enables us to build comprehensive strategies for clients across Germany and Western Europe.</p>
+        <p>Since the Summer of 2025, we've partnered with Performance One Brain, one of Germany's leading specialist for Smart Data and Big Data solutions. Together, we conduct cutting-edge research and development in AI and data science. Their expertise in machine learning, data mining, and statistical learning theory, combined with our AI innovation capabilities, enables us to build comprehensive strategies for clients across Germany and Western Europe.</p>
       </div>
     </div>
-    
+
     <div class="partner-card">
       <div class="partner-logo">
         <a href="https://www.aipartners.guru/" target="_blank" rel="noopener noreferrer">
@@ -138,43 +138,43 @@ permalink: /
       <h4>Autonomous Agent Platform</h4>
       <p>Creating intelligent agents with rich backgrounds and personal timelines that work continuously.</p>
     </div>
-    
+
     <div class="achievement-card">
       <div class="achievement-icon">02</div>
       <h4>Architectural AI Solutions</h4>
       <p>Auto-generating complex offers from architectural plans across multiple industries with unprecedented accuracy.</p>
     </div>
-    
+
     <div class="achievement-card">
       <div class="achievement-icon">03</div>
       <h4>8D Quality Systems</h4>
       <p>Enhanced reporting systems measuring human response quality with advanced fine-tuning filters.</p>
     </div>
-    
+
     <div class="achievement-card">
       <div class="achievement-icon">04</div>
       <h4>Content as Code</h4>
       <p>Pioneering modality conversion - transforming content seamlessly between text, voice, video, and other formats.</p>
     </div>
-    
+
     <div class="achievement-card">
       <div class="achievement-icon">05</div>
       <h4>Collaborative AI Workshops</h4>
       <p>Delivering specialized workshops on AI applications for telecommunications, research, and education sectors.</p>
     </div>
-    
+
     <div class="achievement-card">
       <div class="achievement-icon">06</div>
       <h4>Multi-Agent Strategy</h4>
       <p>Breakthrough methodologies for automated business strategy using advanced multi-agent AI systems.</p>
     </div>
-    
+
     <div class="achievement-card">
       <div class="achievement-icon">07</div>
       <h4>AI Transformation</h4>
       <p>Comprehensive services combining decades of experience with cutting-edge technology implementation.</p>
     </div>
-    
+
     <div class="achievement-card">
       <div class="achievement-icon">08</div>
       <h4>Legacy Modernization</h4>
