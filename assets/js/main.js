@@ -1,5 +1,8 @@
 // Clean, minimal website interactions
 document.addEventListener('DOMContentLoaded', () => {
+    // Check if we're on mobile early
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    
     // Smooth slide-in animation for page content
     const pageContent = document.querySelector('.page-content');
     const header = document.querySelector('.site-header');
@@ -126,31 +129,81 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Handle background video with robust looping
+    // Handle background video with robust looping and deferred loading
     const backgroundVideo = document.querySelector('.background-video');
     const backgroundVideoContainer = document.querySelector('.background-video-container');
     
     if (backgroundVideo) {
-        // Force attributes
-        backgroundVideo.setAttribute('autoplay', 'true');
-        backgroundVideo.setAttribute('muted', 'true');
-        backgroundVideo.setAttribute('playsinline', 'true');
-        backgroundVideo.setAttribute('loop', 'true');
-        backgroundVideo.loop = true;
+        // Store original source for deferred loading
+        const originalSrc = backgroundVideo.querySelector('source')?.src;
         
-        // Log video info
-        backgroundVideo.addEventListener('loadedmetadata', function() {
-            console.log(`Background video duration: ${backgroundVideo.duration}s`);
-        });
-        
-        // Ensure it plays
-        const playVideo = () => {
-            backgroundVideo.play().catch(err => {
-                console.log('Background video play error:', err);
+        if (!isMobile && originalSrc) {
+            // Remove source to prevent immediate loading on desktop
+            backgroundVideo.querySelector('source')?.remove();
+            backgroundVideo.load(); // Reset video
+            
+            // Load background video after a delay and when other videos are loading
+            const loadBackgroundVideo = () => {
+                // Check if at least one innovation video has started loading
+                const innovationVideosLoading = Array.from(videos).some(v => v.hasAttribute('data-loaded'));
+                
+                if (innovationVideosLoading || window.pageYOffset > 100) {
+                    const source = document.createElement('source');
+                    source.src = originalSrc;
+                    source.type = 'video/mp4';
+                    backgroundVideo.appendChild(source);
+                    backgroundVideo.load();
+                    
+                    // Setup attributes after loading
+                    backgroundVideo.setAttribute('autoplay', 'true');
+                    backgroundVideo.setAttribute('muted', 'true');
+                    backgroundVideo.setAttribute('playsinline', 'true');
+                    backgroundVideo.setAttribute('loop', 'true');
+                    backgroundVideo.loop = true;
+                    
+                    // Log video info
+                    backgroundVideo.addEventListener('loadedmetadata', function() {
+                        console.log(`Background video duration: ${backgroundVideo.duration}s`);
+                    });
+                    
+                    // Ensure it plays
+                    const playVideo = () => {
+                        backgroundVideo.play().catch(err => {
+                            console.log('Background video play error:', err);
+                        });
+                    };
+                    
+                    backgroundVideo.addEventListener('loadeddata', playVideo, { once: true });
+                } else {
+                    // Check again later
+                    setTimeout(loadBackgroundVideo, 500);
+                }
+            };
+            
+            // Start checking after a small delay
+            setTimeout(loadBackgroundVideo, 1000);
+        } else {
+            // Mobile or immediate loading fallback
+            backgroundVideo.setAttribute('autoplay', 'true');
+            backgroundVideo.setAttribute('muted', 'true');
+            backgroundVideo.setAttribute('playsinline', 'true');
+            backgroundVideo.setAttribute('loop', 'true');
+            backgroundVideo.loop = true;
+            
+            // Log video info
+            backgroundVideo.addEventListener('loadedmetadata', function() {
+                console.log(`Background video duration: ${backgroundVideo.duration}s`);
             });
-        };
-        
-        playVideo();
+            
+            // Ensure it plays
+            const playVideo = () => {
+                backgroundVideo.play().catch(err => {
+                    console.log('Background video play error:', err);
+                });
+            };
+            
+            playVideo();
+        }
         
         // Handle ended event
         backgroundVideo.addEventListener('ended', function() {
@@ -195,29 +248,103 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Ensure videos play and loop properly
+    // Ensure videos play and loop properly with deferred loading on desktop
     const videos = document.querySelectorAll('.innovation-video video');
+    
+    // Store original sources for lazy loading
+    const videoSources = new Map();
+    
+    if (!isMobile) {
+        // Desktop: Remove sources to prevent immediate loading
+        videos.forEach((video, index) => {
+            // Set video attributes before removing sources
+            video.setAttribute('loop', 'true');
+            video.setAttribute('muted', 'true');
+            video.setAttribute('playsinline', 'true');
+            video.setAttribute('autoplay', 'true');
+            
+            const sources = video.querySelectorAll('source');
+            const sourceData = [];
+            sources.forEach(source => {
+                sourceData.push({
+                    src: source.src,
+                    type: source.type
+                });
+                source.removeAttribute('src');
+            });
+            videoSources.set(video, sourceData);
+            video.load(); // Reset video after removing sources
+        });
+    }
+    
     const videoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const video = entry.target;
-                // Ensure loop attribute is set
+                const container = video.closest('.innovation-video');
+                
+                // Check if we need to load the video (desktop lazy loading)
+                if (!isMobile && videoSources.has(video) && !video.hasAttribute('data-loaded')) {
+                    const sources = videoSources.get(video);
+                    // Re-add sources
+                    sources.forEach(sourceData => {
+                        const source = document.createElement('source');
+                        source.src = sourceData.src;
+                        source.type = sourceData.type;
+                        video.appendChild(source);
+                    });
+                    video.setAttribute('data-loaded', 'true');
+                    video.load(); // Load the video with new sources
+                    
+                    // Add loaded class and ensure playback when video is ready
+                    video.addEventListener('loadeddata', () => {
+                        container.classList.add('video-loaded');
+                        // Ensure video plays after loading
+                        video.play().catch(() => {
+                            // Silently handle autoplay errors
+                        });
+                    }, { once: true });
+                } else if (!isMobile && video.hasAttribute('data-loaded')) {
+                    // Video already loaded, just ensure it plays and remove loading indicator
+                    container.classList.add('video-loaded');
+                    video.play().catch(() => {
+                        // Silently handle autoplay errors
+                    });
+                }
+                
+                // Ensure loop attribute is set and play video if visible
                 video.loop = true;
                 video.muted = true;
-                video.play().catch(() => {
-                    // Silently handle autoplay errors
-                });
+                if (!video.hasAttribute('data-loaded') || isMobile) {
+                    video.play().catch(() => {
+                        // Silently handle autoplay errors
+                    });
+                }
             }
         });
-    }, { threshold: 0.25 });
+    }, { threshold: 0.1 });
     
     videos.forEach((video, index) => {
         videoObserver.observe(video);
-        // Ensure video is ready to play and loop
-        video.load();
+        // Basic setup for all videos
         video.loop = true;
         video.muted = true;
         video.playsInline = true;
+        
+        // For mobile, videos are loaded normally, mark container as loaded
+        if (isMobile) {
+            video.closest('.innovation-video').classList.add('video-loaded');
+        }
+        
+        // Failsafe: Remove loading indicator after 3 seconds on desktop
+        if (!isMobile) {
+            setTimeout(() => {
+                const container = video.closest('.innovation-video');
+                if (!container.classList.contains('video-loaded')) {
+                    container.classList.add('video-loaded');
+                }
+            }, 3000);
+        }
         
         // Disable right-click context menu on videos
         video.addEventListener('contextmenu', function(e) {

@@ -605,6 +605,29 @@ div.intro {
     transition: opacity 0.3s ease;
   }
   
+  // Loading placeholder spinner
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 3px solid rgba(100, 200, 255, 0.3);
+    border-top-color: var(--primary-cyan);
+    border-radius: 50%;
+    animation: spin 1s ease-in-out infinite;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  &.video-loaded::before {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
   video {
     position: absolute;
     top: 0;
@@ -613,10 +636,14 @@ div.intro {
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease;
     -webkit-user-select: none; // Prevents selection
     user-select: none;
+  }
+  
+  &.video-loaded video {
+    opacity: 0.9;
   }
   
   &:hover {

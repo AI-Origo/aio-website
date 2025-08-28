@@ -48,6 +48,16 @@
   }
 }
 
+// Spin animation for loading indicators
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 // Utility classes
 .fade-in {
   animation: fadeIn 0.5s ease-out;
