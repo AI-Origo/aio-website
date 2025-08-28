@@ -110,7 +110,7 @@ permalink: /
       <div class="partner-content">
         <h3><a href="https://brain.performance.one/" target="_blank" rel="noopener noreferrer">Performance One Brain</a></h3>
         <p class="partner-tagline">Smart Data Solutions</p>
-        <p>Since the Summer of 2025, we've partnered with Performance One Brain, one of Germany's leading specialist for Smart Data and Big Data solutions. Together, we conduct cutting-edge research and development in AI and data science. Their expertise in machine learning, data mining, and statistical learning theory, combined with our AI innovation capabilities, enables us to build comprehensive strategies for clients across Germany and Western Europe.</p>
+        <p>Since the Summer of 2025, we've partnered with Performance One Brain, one of Germany's leading specialists for Smart Data and Big Data solutions. Together, we conduct cutting-edge research and development in AI and data science. Their expertise in machine learning, data mining, and statistical learning theory, combined with our AI innovation capabilities, enables us to build comprehensive strategies for clients across Germany and Western Europe.</p>
       </div>
     </div>
 
