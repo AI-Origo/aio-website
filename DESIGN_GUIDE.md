@@ -14,9 +14,9 @@ The website has been redesigned with a clean, minimalist aesthetic featuring a h
 
 ### Videos Implemented
 The innovation section now features three looping videos:
-- **simulation.mp4** - Simulation-Driven Solutions
-- **heatmap.mp4** - Visual Intelligence Tools  
-- **ai-agents.mp4** - Collaborative Agent Systems
+- **simulation-s*.mov* - Simulation-Driven Solutions
+- **heatmap-s.mov** - Visual Intelligence Tools
+- **ai-agents-s.mov** - Collaborative Agent Systems
 
 Videos are:
 - 16:9 aspect ratio with object-fit: cover
