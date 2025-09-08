@@ -13,15 +13,15 @@ permalink: /
 </div>
 
 <div class="intro">
-  <p>We <strong>explore the Future of Work</strong> through collaborative Artificial Intelligence simulations, <strong>democratize access to digital skills training</strong>, and <strong>solve complex problems using agentic AI</strong>. Our expertise spans automation of scientific research processes, legacy systems migrations, and consolidation of data silos and interfaces. As <strong>AI strategy consultants and implementation specialists</strong>, we've partnered with diverse organizations from startups to major gaming studios, key players in the automotive industry, financial institutions and international research institutes. <a href="{{ '/contact' | relative_url }}">Let's transform your business together!</a></p>
+  <p>We <strong>explore the Future of Work</strong> through collaborative Artificial Intelligence simulations, <strong>democratize access to digital skills training</strong> and <strong>transform organizational processes using agentic AI</strong>. Our expertise spans <strong>workflow optimization and automation</strong> across all business functions - from customer support and sales to research, quality assurance and administration. We solve real challenges including voice call processing, invoice automation, report generation and market intelligence gathering. As <strong>AI strategy consultants and implementation specialists</strong>, we've partnered with diverse organizations from startups to major gaming studios, key players in the automotive industry, financial institutions and international research institutes. <a href="{{ '/contact' | relative_url }}">Let's transform your business together!</a></p>
 </div>
 
 ## Our Expertise
 
 <div class="expertise-grid">
   <div class="expertise-item">
-    <h3>AI-Powered Automation</h3>
-    <p>From email classification systems using advanced NLP to automated offer generation from complex electrical circuit diagrams, we deliver solutions that dramatically reduce manual work. Our data augmentation capabilities have enriched databases with pricing information for thousands of products with <3% error rates.</p>
+    <h3>Process Optimization & Automation</h3>
+    <p>We transform organizational workflows through intelligent automation. Our agentic AI systems handle everything from email prioritization and voice call processing to complex offer generation from technical diagrams. We've automated invoice processing, report generation and quality management systems - reducing manual work by up to 80% while improving accuracy. Our solutions seamlessly integrate into existing business processes across all departments.</p>
   </div>
 
   <div class="expertise-item">
@@ -84,7 +84,7 @@ permalink: /
 
 <div class="partners-section">
   <div class="partners-intro">
-    <p>We collaborate with leading organizations to drive innovation and expand our impact across global markets. These strategic partnerships enable us to combine expertise, accelerate research, and deliver comprehensive solutions to our clients.</p>
+    <p>We collaborate with leading organizations to drive innovation and expand our impact across global markets. These strategic partnerships enable us to combine expertise, accelerate research and deliver comprehensive solutions to our clients.</p>
   </div>
 
   <div class="partners-grid">
@@ -110,7 +110,7 @@ permalink: /
       <div class="partner-content">
         <h3><a href="https://brain.performance.one/" target="_blank" rel="noopener noreferrer">Performance One Brain</a></h3>
         <p class="partner-tagline">Smart Data Solutions</p>
-        <p>Since the Summer of 2025, we've partnered with Performance One Brain, one of Germany's leading specialists for Smart Data and Big Data solutions. Together, we conduct cutting-edge research and development in AI and data science. Their expertise in machine learning, data mining, and statistical learning theory, combined with our AI innovation capabilities, enables us to build comprehensive strategies for clients across Germany and Western Europe.</p>
+        <p>Since the Summer of 2025, we've partnered with Performance One Brain, one of Germany's leading specialists for Smart Data and Big Data solutions. Together, we conduct cutting-edge research and development in AI and data science. Their expertise in machine learning, data mining and statistical learning theory, combined with our AI innovation capabilities, enables us to build comprehensive strategies for clients across Germany and Western Europe.</p>
       </div>
     </div>
 
@@ -154,13 +154,13 @@ permalink: /
     <div class="achievement-card">
       <div class="achievement-icon">04</div>
       <h4>Content as Code</h4>
-      <p>Pioneering modality conversion - transforming content seamlessly between text, voice, video, and other formats.</p>
+      <p>Pioneering modality conversion - transforming content seamlessly between text, voice, video and other formats.</p>
     </div>
 
     <div class="achievement-card">
       <div class="achievement-icon">05</div>
       <h4>Collaborative AI Workshops</h4>
-      <p>Delivering specialized workshops on AI applications for telecommunications, research, and education sectors.</p>
+      <p>Delivering specialized workshops on AI applications for telecommunications, research and education sectors.</p>
     </div>
 
     <div class="achievement-card">
@@ -206,6 +206,6 @@ permalink: /
 </div>
 
 <div class="team-stats">
-  <p>Our team of <strong>14 specialists</strong> brings together AI engineers, machine learning specialists, software developers, data scientists, and project managers. With direct an dimmediate access to over <strong>40 additional engineers</strong> through our network, we combine cutting-edge AI expertise with deep industry knowledge to deliver transformative solutions. We have the bandwidth you need.</p>
+  <p>Our team of <strong>14 specialists</strong> brings together AI engineers, machine learning specialists, software developers, data scientists and project managers. With direct an dimmediate access to over <strong>40 additional engineers</strong> through our network, we combine cutting-edge AI expertise with deep industry knowledge to deliver transformative solutions. We have the bandwidth you need.</p>
 </div>
 

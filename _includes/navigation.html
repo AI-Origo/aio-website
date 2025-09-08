@@ -1,8 +1,10 @@
 <nav class="site-nav" id="site-nav">
     <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+    <a href="{{ '/process-optimization' | relative_url }}" {% if page.url == '/process-optimization/' %}class="active"{% endif %}>Process Optimization</a>
     <a href="{{ '/research-augmentation' | relative_url }}" {% if page.url == '/research-augmentation/' %}class="active"{% endif %}>Research Augmentation</a>
     <a href="{{ '/system-modernization' | relative_url }}" {% if page.url == '/system-modernization/' %}class="active"{% endif %}>System Modernization</a>
     <a href="{{ '/gaming' | relative_url }}" {% if page.url == '/gaming/' %}class="active"{% endif %}>Gaming</a>
+    <a href="{{ '/references' | relative_url }}" {% if page.url == '/references/' %}class="active"{% endif %}>References</a>
     <a href="{{ '/contact' | relative_url }}" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a>
 </nav>
 <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">

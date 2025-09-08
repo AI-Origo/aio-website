@@ -30,7 +30,7 @@ We modernized legacy user management systems for a major gaming company with:
 - Hundreds of millions of users globally
 - 10+ year old codebases requiring continuous operation
 
-**Results**: Significantly improved maintainability and extensibility, reduced development time, and enabled efficient implementation of new features in previously unfamiliar systems.
+**Results**: Significantly improved maintainability and extensibility, reduced development time and enabled efficient implementation of new features in previously unfamiliar systems.
 
 ### API Integration Excellence
 Our tools combat code rot while connecting disjunct APIs to speed up systems integration in legacy infrastructure. Through agentic interfacing, we enable seamless communication between independent systems, reducing integration complexity and maintenance overhead.
