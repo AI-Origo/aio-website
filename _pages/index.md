@@ -46,6 +46,7 @@ permalink: /
   <div class="innovation-item">
     <div class="innovation-video">
       <video autoplay loop muted playsinline>
+        <source src="{{ '/assets/videos/simulation.mp4' | relative_url }}" type="video/mp4">
         <source src="{{ '/assets/videos/simulation-s.mov' | relative_url }}" type="video/quicktime">
       </video>
     </div>
@@ -58,6 +59,7 @@ permalink: /
   <div class="innovation-item">
     <div class="innovation-video">
       <video autoplay loop muted playsinline>
+        <source src="{{ '/assets/videos/heatmap.mp4' | relative_url }}" type="video/mp4">
         <source src="{{ '/assets/videos/heatmap-s.mov' | relative_url }}" type="video/quicktime">
       </video>
     </div>
@@ -70,6 +72,7 @@ permalink: /
   <div class="innovation-item">
     <div class="innovation-video">
       <video autoplay loop muted playsinline>
+        <source src="{{ '/assets/videos/ai-agents.mp4' | relative_url }}" type="video/mp4">
         <source src="{{ '/assets/videos/ai-agents-s.mov' | relative_url }}" type="video/quicktime">
       </video>
     </div>

@@ -171,83 +171,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Handle background video with lazy loading
+    // Simple background video setup - let browser handle everything
     const backgroundVideo = document.querySelector('.background-video');
     const backgroundVideoContainer = document.querySelector('.background-video-container');
 
     if (backgroundVideo) {
-        // Set video attributes
-        backgroundVideo.setAttribute('autoplay', 'true');
-        backgroundVideo.setAttribute('muted', 'true');
-        backgroundVideo.setAttribute('playsinline', 'true');
-        backgroundVideo.setAttribute('loop', 'true');
-        backgroundVideo.loop = true;
-        backgroundVideo.muted = true;
-
-        if (!isMobile) {
-            // Desktop: Store and remove source for lazy loading
-            const source = backgroundVideo.querySelector('source');
-            const originalSrc = source?.src;
-            const originalType = source?.type || 'video/mp4';
-
-            if (source) {
-                source.remove();
-                backgroundVideo.load(); // Reset video
-
-                // Load background video after a short delay
-                setTimeout(() => {
-                    const newSource = document.createElement('source');
-                    newSource.src = originalSrc;
-                    newSource.type = originalType;
-                    backgroundVideo.appendChild(newSource);
-                    backgroundVideo.load();
-
-                    // Re-ensure attributes are set after loading new source
-                    backgroundVideo.setAttribute('loop', 'true');
-                    backgroundVideo.loop = true;
-                    backgroundVideo.muted = true;
-
-                    // Play when ready
-                    backgroundVideo.addEventListener('loadeddata', () => {
-                        // Double-check loop is enabled before playing
-                        backgroundVideo.loop = true;
-                        backgroundVideo.play().catch(err => {
-                            console.log('Background video autoplay failed:', err);
-                        });
-                    }, { once: true });
-
-                    // Log video info and check loop status
-                    backgroundVideo.addEventListener('loadedmetadata', () => {
-                        console.log(`Background video duration: ${backgroundVideo.duration}s, loop: ${backgroundVideo.loop}`);
-                        // Force loop attribute again if needed
-                        if (!backgroundVideo.loop) {
-                            backgroundVideo.loop = true;
-                            backgroundVideo.setAttribute('loop', 'true');
-                        }
-                    }, { once: true });
-                }, 2000); // 2 second delay for background video
-            }
-        } else {
-            // Mobile: Play immediately
-            backgroundVideo.play().catch(err => {
-                console.log('Background video autoplay failed:', err);
-            });
-        }
-
-        // Handle ended event for looping fallback
-        backgroundVideo.addEventListener('ended', function() {
-            console.log('Background video ended, restarting...');
-            backgroundVideo.currentTime = 0;
-            backgroundVideo.play().catch(() => {});
-        });
-
-        // Handle page visibility
-        document.addEventListener('visibilitychange', function() {
-            if (!document.hidden && backgroundVideo.paused && backgroundVideo.readyState >= 3) {
-                backgroundVideo.play().catch(() => {});
-            }
-        });
-
         // Disable right-click
         [backgroundVideo, backgroundVideoContainer].filter(Boolean).forEach(element => {
             element.addEventListener('contextmenu', function(e) {
@@ -257,106 +185,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Ensure videos play and loop properly with deferred loading on desktop
+    // Simple setup for innovation videos - let browser handle everything
     const videos = document.querySelectorAll('.innovation-video video');
 
-    // Store original sources for lazy loading
-    const videoSources = new Map();
+    videos.forEach((video) => {
+        const container = video.closest('.innovation-video');
 
-    if (!isMobile) {
-        // Desktop: Remove sources to prevent immediate loading
-        videos.forEach((video, index) => {
-            // Set video attributes before removing sources
-            video.setAttribute('loop', 'true');
-            video.setAttribute('muted', 'true');
-            video.setAttribute('playsinline', 'true');
-            video.setAttribute('autoplay', 'true');
-
-            const sources = video.querySelectorAll('source');
-            const sourceData = [];
-            sources.forEach(source => {
-                sourceData.push({
-                    src: source.src,
-                    type: source.type
-                });
-                source.remove(); // Remove source element completely to prevent loading
-            });
-            videoSources.set(video, sourceData);
-            video.load(); // Reset video after removing sources
-        });
-    }
-
-    const videoObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const video = entry.target;
-                const container = video.closest('.innovation-video');
-
-                // Check if we need to load the video (desktop lazy loading)
-                if (!isMobile && videoSources.has(video) && !video.hasAttribute('data-loaded')) {
-                    const sources = videoSources.get(video);
-                    // Re-add sources
-                    sources.forEach(sourceData => {
-                        const source = document.createElement('source');
-                        source.src = sourceData.src;
-                        source.type = sourceData.type;
-                        video.appendChild(source);
-                    });
-                    video.setAttribute('data-loaded', 'true');
-                    video.load(); // Load the video with new sources
-
-                    // Add loaded class and ensure playback when video is ready
-                    video.addEventListener('loadeddata', () => {
-                        container.classList.add('video-loaded');
-                        // Ensure video plays after loading
-                        video.play().catch(() => {
-                            // Silently handle autoplay errors
-                        });
-                    }, { once: true });
-                } else if (!isMobile && video.hasAttribute('data-loaded')) {
-                    // Video already loaded, just ensure it plays and remove loading indicator
-                    container.classList.add('video-loaded');
-                    video.play().catch(() => {
-                        // Silently handle autoplay errors
-                    });
-                }
-
-                // Ensure loop attribute is set and play video if visible
-                video.loop = true;
-                video.muted = true;
-                if (!video.hasAttribute('data-loaded') || isMobile) {
-                    video.play().catch(() => {
-                        // Silently handle autoplay errors
-                    });
-                }
-            }
-        });
-    }, { 
-        threshold: 0.1,
-        rootMargin: '50px' // Only trigger when well into viewport
-    });
-
-    videos.forEach((video, index) => {
-        videoObserver.observe(video);
-        // Basic setup for all videos
-        video.loop = true;
-        video.muted = true;
-        video.playsInline = true;
-
-        // For mobile, videos are loaded normally, mark container as loaded
-        if (isMobile) {
-            video.closest('.innovation-video').classList.add('video-loaded');
-        }
-
-        // Failsafe: Remove loading indicator after 3 seconds on desktop
-        if (!isMobile) {
-            setTimeout(() => {
-                const container = video.closest('.innovation-video');
-                if (!container.classList.contains('video-loaded')) {
-                    container.classList.add('video-loaded');
-                }
-            }, 3000);
-        }
+        // Mark all containers as loaded immediately
+        container.classList.add('video-loaded');
 
         // Disable right-click context menu on videos
         video.addEventListener('contextmenu', function(e) {
@@ -364,76 +200,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         });
 
-        // Debug info - get src from stored data or current source
-        let videoSrc = '';
-        if (videoSources.has(video)) {
-            // Desktop: get from stored data
-            const sources = videoSources.get(video);
-            videoSrc = sources[0]?.src || '';
-        } else {
-            // Mobile or already loaded: get from DOM
-            videoSrc = video.querySelector('source')?.src || '';
-        }
-        const isHeatmap = videoSrc.includes('heatmap');
-
-        // Force loop on ended event as fallback
-        video.addEventListener('ended', function() {
-            console.log(`Video ended: ${videoSrc}`);
-            this.currentTime = 0;
-            this.play().catch(err => {
-                console.error(`Error replaying video: ${videoSrc}`, err);
-            });
-        });
-
-        // Special handling for heatmap video with incorrect duration
-        if (isHeatmap) {
-            // Check video duration when metadata loads
-            video.addEventListener('loadedmetadata', function() {
-                console.log(`Heatmap video duration: ${this.duration}s (expected 8-11s)`);
-
-                // Force loop after 10 seconds since the duration metadata is wrong
-                const EXPECTED_DURATION = 10; // seconds
-                let heatmapInterval = null;
-
-                // Use throttled timeupdate for better performance
-                const checkHeatmapLoop = throttle(() => {
-                    if (this.currentTime >= EXPECTED_DURATION) {
-                        console.log('Forcing heatmap loop at 10s');
-                        this.currentTime = 0;
-                        this.play().catch(() => {});
-                    }
-                }, 250); // Check 4 times per second max
-
-                this.addEventListener('timeupdate', checkHeatmapLoop);
-
-                // Clean up interval on page unload
-                window.addEventListener('beforeunload', () => {
-                    if (heatmapInterval) {
-                        clearInterval(heatmapInterval);
-                    }
-                });
-            });
-        }
-
-        // Special handling for Safari and other browsers
-        video.addEventListener('pause', function() {
-            if (!this.seeking && !document.hidden) {
-                this.play().catch(() => {});
-            }
-        });
-
-        // Log any errors and video info
-        video.addEventListener('error', function(e) {
-            console.error(`Video error for ${videoSrc}:`, e);
-            console.error(`Video readyState: ${this.readyState}, networkState: ${this.networkState}`);
-        });
-
-        // Log video info when loaded
+        // Simple logging for debugging
         video.addEventListener('loadedmetadata', function() {
-            console.log(`Video loaded: ${videoSrc.split('/').pop()}`);
-            console.log(`- Duration: ${this.duration}s`);
-            console.log(`- Size: ${this.videoWidth}x${this.videoHeight}`);
-            console.log(`- Ready state: ${this.readyState}`);
+            console.log(`Video loaded: ${video.querySelector('source')?.src.split('/').pop()}`);
         });
     });
 
