@@ -137,8 +137,8 @@ permalink: /
 <div class="news-section">
   <div class="news-grid">
     <div class="news-card">
-      <h4>Speaking at AI Summit Budapest</h4>
-      <p>AI Origo takes center stage at Hungary's premier AI event, presenting "My Colleague is an AI" at the MKIK PROMPT ARENA. Exploring the future of human-AI collaboration in the workplace.</p>
+      <h4>Shaping Hungary's AI Future</h4>
+      <p>AI Origo joins the jury panel for the inaugural STRIX Award, Hungary's first comprehensive corporate AI competition. Recognizing organizations that balance innovation with human values in AI implementation.</p>
     </div>
 
     <div class="news-card">
@@ -147,8 +147,8 @@ permalink: /
     </div>
 
     <div class="news-card">
-      <h4>Shaping Hungary's AI Future</h4>
-      <p>AI Origo joins the jury panel for the inaugural STRIX Award, Hungary's first comprehensive corporate AI competition. Recognizing organizations that balance innovation with human values in AI implementation.</p>
+      <h4>Speaking at AI Summit Budapest</h4>
+      <p>AI Origo takes center stage at Hungary's premier AI event, presenting "My Colleague is an AI" at the MKIK PROMPT ARENA. Exploring the future of human-AI collaboration in the workplace.</p>
     </div>
   </div>
 </div>
