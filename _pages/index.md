@@ -132,6 +132,27 @@ permalink: /
   </div>
 </div>
 
+## Latest News
+
+<div class="news-section">
+  <div class="news-grid">
+    <div class="news-card">
+      <h4>Speaking at AI Summit Budapest</h4>
+      <p>AI Origo takes center stage at Hungary's premier AI event, presenting "My Colleague is an AI" at the MKIK PROMPT ARENA. Exploring the future of human-AI collaboration in the workplace.</p>
+    </div>
+
+    <div class="news-card">
+      <h4>Advancing Open Science Research</h4>
+      <p>AI Origo presents cutting-edge semantic text analysis at the Hungarian Academy of Sciences. Demonstrating vector embedding technology for language-agnostic content extraction in partnership with L'Harmattan Open Access.</p>
+    </div>
+
+    <div class="news-card">
+      <h4>Shaping Hungary's AI Future</h4>
+      <p>AI Origo joins the jury panel for the inaugural STRIX Award, Hungary's first comprehensive corporate AI competition. Recognizing organizations that balance innovation with human values in AI implementation.</p>
+    </div>
+  </div>
+</div>
+
 ## Recent Achievements
 
 <div class="achievements-section">
