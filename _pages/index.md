@@ -143,7 +143,7 @@ permalink: /
 
     <div class="news-card">
       <h4>Advancing Open Science Research</h4>
-      <p>AI Origo presents cutting-edge semantic text analysis at the Hungarian Academy of Sciences. Demonstrating vector embedding technology for language-agnostic content extraction in partnership with L'Harmattan Open Access.</p>
+      <p>AI Origo presents semantic text analysis using vector embeddings for intelligent content clustering at the Hungarian Academy of Sciences in partnership with L'Harmattan Open Access.</p>
     </div>
 
     <div class="news-card">
